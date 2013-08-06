@@ -1,0 +1,10 @@
+[
+    {
+        "caption": "SublimeREPL: Python 3",
+        "command": "run_existing_window_command", "args":
+        {
+            "id": "repl_python3",
+            "file": "config/Python/Main.sublime-menu"
+        }
+    }
+]

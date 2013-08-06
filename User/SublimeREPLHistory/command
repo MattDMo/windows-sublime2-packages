@@ -1,0 +1,1358 @@
+-?
+-data = [6,3,1,2,4,5]
+-data
+-data.sort()
+-data
+-import sys
+-sys.os.getpwd()
+-sys.getpwd()
+-import os
+-os.getcwd()
+-os.chdir('~')
+-os.chdir('/Users/mattmorrison/Development/python/HeadFirstPython/chapter5')
+-os.getcwd()
+-quit()
+-import os
+-os.chdir('/Users/mattmorrison/Development/python/HeadFirstPython/chapter5')
+-demo()
+-os.chdir('/Users/mattmorrison/Development/python/HeadFirstPython/chapter6')
+-import coachkelly2
+-def sanitize(time_string):\n    """ clean input times to format min.secs\n    """\n    if '-' in time_string:\n        splitter = '-'\n    elif ':' in time_string:\n        splitter = ':'\n    else:\n        return(time_string)\n    mins, secs = time_string.split(splitter)\n    return(mins + '.' + secs)
+-def get_data(file):\n    """ open data files and return contents\n    """\n    try:\n        with open(file) as athlete_file:\n            return athlete_file.readline().strip().split(',')\n    except IOError as e:\n        print('File error: ' + str(e))\n        return None
+-get_data('sarah2.txt')
+-sarah = get_data('sarah2.txt')
+-sarah
+-(sarah_name, sarah_dob) = sarah.pop(), sarah.pop()
+-sarah_name
+-sarah = get_data('sarah2.txt')
+-import coachkelly2
+-restart
+-cleese = {}
+-palin = dict()
+-type(cleese)
+-type(sarah)
+-cleese['name'] = 'John Cleese'
+-cleese['occupations'] = ['actor', 'comedian', 'writer', 'film producer']
+-cleese
+-palin = {'name': 'Michael Palin', 'occupations': ['comedian', 'actor', 'writer', 'tv']}
+-palin['name']
+-palin['occupations'][-1]
+-cleese['occupations'][-1]
+-palin['birthplace'] = 'Broomhill, Sheffield, England'
+-palin
+-cleese['birthplace'] = 'Weston-super-Mare, North Somerset, England'
+-cleese
+-class Athlete:
+-def __init__(self, a_name, a_dob=None, a_times=[]):
+-class Athlete:
+-	def __init__(self, a_name, a_dob=None, a_times=[]):
+-		self.name = a_name
+-		self.dob = a_dob
+-		self.times = a_times
+-sarah = Athlete()
+-sarah = Athlete('Sarah Sweeney', '2002-6-17', ['2:58', '2.58', '1.56'])
+-james = Athlete('James Jones')
+-sarah
+-james
+-type(sarah)
+-sarah.name
+-sarah.a_times
+-import os
+-os.getcwd()
+-os.chdir('/Users/mattmorrison/Development/python/HeadFirstPython/chapter6')
+-import Athlete
+-james = Athlete.get_data('james2.txt')
+-get_data('james2.txt')
+-class NamedList(list)
+-class NamedList(list):
+-	def __init__(self, a_name)
+-	def __init__(self, a_name):
+-class NamedList(list):
+-	def __init__(self, a_name):
+-		list.__init__([])
+-		self.name = a_name
+-johnny = NamedList('John Paul Jones')
+-type(johnny)
+-dir(johnny)
+-dir(sarah)
+-dir(list)
+-help list
+-help(list\n)
+-johnny.append('Bass Player')
+-johnny.extend('Composer', 'Arranger', 'Musician')
+-johnny.extend(['Composer', 'Arranger', 'Musician'])
+-johnny
+-johnny.name
+-for attr in johnny print(johnny.name + " is a " + attr + ".")
+-for attr in johnny:print(johnny.name + " is a " + attr + ".")
+-	print(johnny.name + " is a " + attr + ".")
+-for attr in johnny:
+-	print(johnny.name + " is a " + attr + ".")
+-os.ch
+-os.chdir('../chapter7')
+-os.getcwd()
+-dir(dict)
+-import athletemodel
+-dir()
+-load
+-help()
+-modules
+-quit
+-import pickle\nfrom athletelist import AthleteList\n\ndef get_data(file):\n    """ open data files and return contents as an AthleteList object\n    """\n    try:\n        with open(file) as athlete_file:\n            data = athlete_file.readline().strip().split(',')\n            return AthleteList(data.pop(0), data.pop(0), data)\n\n    except IOError as e:\n        print('File error: ' + str(e))\n        return(None)\n\ndef put_to_store(files_list):\n    all_athletes = {}\n    for item in files_list:\n        athlete = get_data(item)\n        all_athletes[athlete.name] = athlete\n    try:\n        with open('all_athletes.pickle', 'wb') as pickle_file:\n            pickle.dump(all_athletes, pickle_file)\n    except IOError as io_err:\n        print('File error in put_to_store: ' + str(io_err))\n    except pickle.PickleError as p_err:\n        print('Pickling error in put_to_store: ' + str(p_err))\n    return(all_athletes)\n\ndef get_from_store():\n    all_athletes = {}\n    try:\n        with open('all_athletes.pickle', 'rb') as pickle_file:\n            pickle.load(all_athletes, pickle_file)\n    except IOError as io_err:\n        print('File error in get_from_store: ' + str(io_err))\n    except pickle.PickleError as p_err:\n        print('Pickling error in get_from_store: ' + str(p_err))\n    return(all_athletes)
+-dir()
+-quit()
+-dir()
+-import os
+-os.getcwd()
+-os.chdir('../chapter7')
+-dir()
+-the_files = ['sarah2.txt', 'james2.txt', 'mikey2.txt', 'julie2.txt']
+-data = put_to_store(the_files)
+-data
+-for each_athlete in data:
+-	print(data[each_athlete].name + ' ' + data[each_athlete].dob)
+-data_copy = get_from_store()
+-for each_athlete in data_copy:
+-	print(data_copy[each_athlete].name + ' ' + data_copy[each_athlete].dob)
+-start_response()
+-include_footer({'Home': '/index.html', 'Select': '/cgi-bin/select.py'})
+-os.getcwd()
+-os.chdir('webapp-chapter7')
+-os.getcwd()
+-include_footer({'Home': '/index.html', 'Select': '/cgi-bin/select.py'})
+-import this
+-import os
+-os.getcwd()
+-os.chdir('../../webapp/cgi-bin')
+-import pickle
+-def get_from_store():\n    all_athletes = {}\n    try:\n        with open('all_athletes.pickle', 'rb') as pickle_file:\n            all_athletes = pickle.load(pickle_file)\n    except IOError as io_err:\n        print('File error in get_from_store: ' + str(io_err))\n    except pickle.PickleError as p_err:\n        print('Pickling error in get_from_store: ' + str(p_err))\n    return(all_athletes) # as dict
+-get_from_store()
+-all_athletes
+-athletes = get_from_store()
+-athletes
+-athletes.keys()
+-import scipy
+-import numpy
+-import os
+-os.getcwd()
+-import sqlite3
+-connection = sqlite3.connect(db_name)
+-connection = sqlite3.connect('coachdata.sqlite3')
+-cursor = connection.cursor()
+-results = cursor.execute("select name, id from athletes")
+-results
+-print(results)
+-response = results.fetchall()
+-response
+-results = cursor.execute('select name from athletes')
+-response = results.fetchall()
+-response
+-results = cursor.execute('select value from timing_data where athlete_id=3')
+-response = results.fetchall()
+-response
+-results1 = cursor.execute("SELECT name, dob FROM athletes WHERE id=?", (athlete_id,))
+-results1 = cursor.execute("SELECT name, dob FROM athletes WHERE id=3")
+-(name, dob) = results1.fetchone()
+-results2 = cursor.execute("SELECT value FROM timing_data WHERE athlete_id=3")
+-foo = results2.fetchall()
+-foo
+-response = {'Name': name,\n                'DOB':  dob,\n                'data': data,\n                'top3': data[0:3]}
+-data = [row[0] for row in results2.fetchall()]
+-response = {'Name': name,\n                'DOB':  dob,\n                'data': data,\n                'top3': data[0:3]}
+-response
+-connection
+-curson
+-cursor
+-results1 = cursor.execute("SELECT name, dob FROM athletes WHERE id=?", (athlete_id,))
+-athlete_id = 4
+-results1 = cursor.execute("SELECT name, dob FROM athletes WHERE id=?", (athlete_id,))
+-(name, dob) = results1.fetchone()
+-name
+-dob
+-results2 = cursor.execute("SELECT value FROM timing_data WHERE athlete_id=? ORDER BY value", (athlete_id,))
+-data = [row[0] for row in results2.fetchall()]
+-data
+-response = {'Name': name,\n                'DOB':  dob,\n                'data': data,\n                'top3': data[0:3]}
+-response
+-import os
+-os.getcwd()
+-os.chdir('..')
+-os.getcwd()
+-from google.appengine.ext import db
+-from google.appengine.ext import db
+-import google
+-from google.appengine.ext import db
+-from google.appengine.ext import db
+-from google.appengine.ext import db
+-import googleappengine
+-from google.appengine.ext import db
+-from google.appengine.ext import db
+-from google.appengine.ext import db
+-dir()
+-dir(db)
+-import os
+-os.getcwd()
+-os.chdir('..')
+-os.getcwd()
+-import django.core.exceptions
+-row_data = {}\n\nwith open('PaceData.csv') as paces:\n\n    column_headings = paces.readline().strip().split(',')\n    column_headings.pop(0)\n\n    for each_line in paces:\n        row = each_line.strip().split(',')\n        row_label = row.pop(0)\n        row_data[row_label] = row\n\nnum_cols = len(column_headings)\nprint(num_cols, end=' -> ')\nprint(column_headings)\n\nnum_2mi = len(row_data['2mi'])\nprint(num_2mi, end=' -> ')\nprint(row_data['2mi'])\n\nnum_Marathon = len(row_data['Marathon'])\nprint(num_Marathon, end=' -> ')\nprint(row_data['Marathon'])
+-evaluate
+-help(eval)
+-eval(marathon.py)
+-import os
+-os.getcwd()
+-os.chdir('/Users/mattmorrison/hfp/chapter11')
+-os.getcwd()
+-eval(marathon.py)
+-eval('marathon.py')
+-idle
+-abs('-20')
+-abs(-20)
+-dir()
+-load
+-dir()
+-def find_closest(look_for, target_data):\n    max_diff = 9999999\n    for each_thing in target_data:\n        diff = abs(each_thing - look_for)\n        if diff == 0:\n            found_it = each_thing\n            break\n        elif diff < max_diff:\n            max_diff = diff\n            found_it = each_thing\n    return(found_it)
+-dir()
+-find_closest(3.3, [1.5, 2.5, 4.5, 5.2, 6])
+-find_closest(3.5, [1.5, 2.5, 4.5, 5.2, 6])
+-find_closest(3.51, [1.5, 2.5, 4.5, 5.2, 6])
+-c(1:100)
+-c
+-demo()
+-demo(graphics)
+-import Bio
+-import Bio
+-import Bio
+-import Bio
+-import Bio
+-print(Bio.__version__)
+-c(1:50)
+-f = function(x,y) {c(x+1, y + 1)}
+-f
+-f(1,2)
+-f(1:2)
+-f(c(1:2))
+-c(1:2)
+-a = array(c(1:12), dim=c(3,4))
+-a
+-m = matrix(data=c(1:12), nrow=3, ncol=4)
+-m
+-a == m
+-import pandas
+-dir()
+-dir(pandas)
+-import matplotlib
+-import Bio
+-import pandas
+-plot(arange(10))
+-plot
+-import os
+-os.getcwd()
+-plot(arange(10))
+-import pandas
+-plot(arange(10))
+-import pandas
+-plot(arange(10))
+-import pandas
+-plot(arange(10))
+-plot(arange(10))
+-pylab
+-plot(arange(10))
+-import json
+-import os
+-import os
+-os.getcwd()
+-os.chdir('/Users/mattmorrison/Development/python/PyForDataAnalysis/')
+-import json
+-path = 'ch02/usagov_bitly_data2012-03-16-1331923249.txt'
+-records = [json.loads(line) for line in open(path)]
+-records
+-len(records)
+-records[3000]
+-records[0]
+-time_zones = [rec['tz'] for rec in records if 'tz' in rec]
+-len(time_zones)
+-from pandas import DataFrame, Series
+-import pandas as pd\nframe = DataFrame(records)
+-frame
+-frame['tz']
+-frame['tz'].value_counts()
+-tz_counts = frame['tz'].value_counts()
+-clean_tz = frame['tz'].fillna('Missing')
+-clean_tz[clean_tz == ''] = 'Unknown'
+-tz_counts = clean_tz.value_counts()
+-tz_counts
+-tz_counts[:10].plot(kind=barh, rot=0)
+-tz_counts[:10].plot(kind='barh', rot=0)
+-dir()
+-import os
+-os.getcwd()
+-import os
+-tz_counts[:10].plot(kind='barh', rot=0)
+-dir(builtins)
+-dir(__builtins__)
+-len(dir(__builtins__))
+-import sys
+-sys.platform
+-sys
+-dir(sys)
+-sys.version_info
+-import email
+-*ns*
+-nil
+-(def x 'hello world')
+-(def x "hello world")
+-x
+-"hello world"
+-;foo
+-done
+-#dlif
+-d\ndone
+-help
+-fart
+-1+1
+-println('Hello surreal world')
+-println("Hello surreal world")
+-1. + 1.
+-(1). + (1).
+-(1).+(1).
+-res1
+-println(res0)
+-abc
+-"abc" + 4
+-"abc" * 4
+-4 * "abc"
+-a=1
+-val a=1
+-val b=2
+-if (b<a) {}
+-if (b<a) {
+-println("true")
+-} else {
+-println("false")
+-}
+-Nil
+-if (false) println("false")
+-if (0) println("false")
+-if (true) println("false")
+-while true {
+-while (true)
+-println("foo")
+-this
+-self
+-(println "Give me some Clojure!")
+-nil
+-(^ 2 8)
+-(pow 2 8)
+-(exp 2 8)
+-(Math.pow 2 8)
+-(quit)
+-(Math.pow 2 8)
+-(Math. pow 2 8)
+-(class (+ 1 2))
+-(Math.pow (2 8))
+-(print "true")
+-(println "true")
+-'(1 2 3)
+-(quit)
+-(defn average)
+-(defn average\n[numbers]\n(/ (apply + numbers) (count numbers)))
+-(average [8 554 229 3558 1562 1548 6852])
+-(apply (average [8 554 229 3558 1562 1548 6852]))
+-(/ 14311 7)
+-(Math/pow 2 8)
+-(quit)
+-\\h
+-quit
+-import PIL
+-import pil
+-import Imaging
+-import imaging
+-import PCV
+-dir()
+-dir(PCV)
+-quit()
+-c(1:10)
+-help
+-3 > 2
+-false
+-true == 1
+-true === 1
+-1 > 0
+-0 > -1
+-1 > 0 > -1
+-3 > 2 > 1
+-console.log("Hello Node")
+-console.log("Hello Node");
+-.helop
+-.help
+-var http = require('http')
+-(add 3 5 7)
+-(quit)
+-(+ 3 5 7)
+-(defn next-terms [term-1 term-2]\n(let [term-3 (+ term-1 term-2)]\n(lazy-seq\n(cons term-3\n(next-terms term-2 term-3)))))
+-(defn fibonacci [t1 t2])
+-(defn fibonacci [t1 t2]\n	(concat [t1 t2]\n		(next-terms t1 t2)))
+-(take 15 (fibonacci 0 1))
+-(quit)
+-print("Welcome back, Matt!")
+-'AAAAATCCCGAGGCGGCTATATAGGGCTCCGGAGGCGTAATATAAAA'.find('TCCGGA')
+-str.count
+-'actg'.count
+-'actg'.count()
+-'actg'.count('c')
+                     -import numpy
+-import matplotlib
+-import pandas
+-open
+-import os
+-os.getcwd()
+-import os
+-os.getcwd()
+-path = '/Users/mattmorrison/Development/python/PyForDataAnalysis/ch02/usagov_bitly_data2012-03-16-1331923249.txt'
+-open(path).readline()
+-import json
+-records = [json.loads(line) for line in open(path)]
+-records
+-records[0]['tz']
+-time_zones = [rec['tz'] for rec in records if 'tz' in rec]
+-time_zones
+-import pandas as pd
+-from pandas import DataFrame, Series
+-frame = DataFrame(records)
+-frame
+-frame['tz']
+-frame['tz'].value_counts()
+-tz_counts = frame['tz'].value_counts()
+-clean_tz = frame['tz'].fillna('Missing')
+-clean_tz[clean_tz == ''] = 'Unknown'
+-new_tz_counts = clean_tz.value_counts()
+-new_tz_counts
+-new_tz_counts.plot(kind='barh', rot=0)
+-L = [1,2]
+-L.append(L)
+-L
+-2**(1e6)
+-len(str(2**(1e6)))
+-len(str(2**(1000000)))
+-2**1e5
+-1e5
+-len(str(2**(10000000)))
+-1e308
+-2e308
+-inf
+-None
+-set("The light in the window is a crack in the sky")
+-DNAbases = set('ACTGactg')
+-RNAbases = set('ACUGacug')
+-DNAbases
+-def validate_base_sequence(base_sequence, RNAflag=False):
+-	return(set(base_sequence) <= RNAbases if RNAflag else DNAbases)
+-def validate_base_sequence(base_sequence, RNAflag=False):
+-	return(set(base_sequence) <= (RNAbases if RNAflag else DNAbases))
+-import this
+-library(nutshell)
+-library
+-m = matrix(data=c(101:112), nrow=3, ncol=4)
+-m
+-a <- array(data=c(101:124), dim=c(2, 3, 4))
+-a
+-T
+-T F
+-v = 1:12
+-v[15] = 15
+-v
+-?rep
+-rep(c(T, F), 10)
+-v[rep(c(T, F), 10)]
+-v = 100:119
+-v[rep(c(T, F), 10)]
+-v[(v %% 3 == 0)]
+-l[(l > 7)]
+-l <- list(a=1, b=2, c=3, d=4, e=5, f=6, g=7, h=8, i=9, j=10)
+-l[(l > 7)]
+-l$j
+-#help
+-#help;;
+-(3*5)
+-(3*5,)
+-[1,2,3,4,5]
+-my_list = [1,2,3,4,5]
+-del my_list
+-my_list
+-del my_list
+-my_list = [1,2,3,4,5]
+-my_list
+-my_dict = {1:'one', 2:'two'}
+-my_dict
+-del my_dict
+-my_dict
+-list1 = [1,2,3]
+-list2 = [4,5]
+-list2 = [4,5,6]
+-list1 + list2
+-list1.extend(list2)
+-list1
+-list2
+-''.join(list1)
+-''.join(str(list1))
+-DNAbases = {'A': 'adenine', 'C': 'cytosine', 'G': 'guanine', 'T': 'thymine'}
+-DNAbases
+-RNAbases = {'A': 'adenine', 'C': 'cytosine', 'G': 'guanine', 'U': 'uracil'}
+-RNAbases
+-DNAbases
+-RNA_codon_table = {\n# Second Base\n# U C A G\n# U\n'UUU': 'Phe', 'UCU': 'Ser', 'UAU': 'Tyr', 'UGU': 'Cys', # UxU\n'UUC': 'Phe', 'UCC': 'Ser', 'UAC': 'Tyr', 'UGC': 'Cys', # UxC\n'UUA': 'Leu', 'UCA': 'Ser', 'UAA': '---', 'UGA': '---', # UxA\n'UUG': 'Leu', 'UCG': 'Ser', 'UAG': '---', 'UGG': 'Urp', # UxG\n# C\n'CUU': 'Leu', 'CCU': 'Pro', 'CAU': 'His', 'CGU': 'Arg', # CxU\n'CUC': 'Leu', 'CCC': 'Pro', 'CAC': 'His', 'CGC': 'Arg', # CxC\n'CUA': 'Leu', 'CCA': 'Pro', 'CAA': 'Gln', 'CGA': 'Arg', # CxA\n'CUG': 'Leu', 'CCG': 'Pro', 'CAG': 'Gln', 'CGG': 'Arg', # CxG\n# A\n'AUU': 'Ile', 'ACU': 'Thr', 'AAU': 'Asn', 'AGU': 'Ser', # AxU\n'AUC': 'Ile', 'ACC': 'Thr', 'AAC': 'Asn', 'AGC': 'Ser', # AxC\n'AUA': 'Ile', 'ACA': 'Thr', 'AAA': 'Lys', 'AGA': 'Arg', # AxA\n'AUG': 'Met', 'ACG': 'Thr', 'AAG': 'Lys', 'AGG': 'Arg', # AxG\n# G\n'GUU': 'Val', 'GCU': 'Ala', 'GAU': 'Asp', 'GGU': 'Gly', # GxU\n'GUC': 'Val', 'GCC': 'Ala', 'GAC': 'Asp', 'GGC': 'Gly', # GxC\n'GUA': 'Val', 'GCA': 'Ala', 'GAA': 'Glu', 'GGA': 'Gly', # GxA\n'GUG': 'Val', 'GCG': 'Ala', 'GAG': 'Glu', 'GGG': 'Gly' # GxG\n}
+-RNA_codon_table
+-RNA_codon_table = {\n# Second Base\n# U C A G\n# U\n'UUU': 'Phe', 'UCU': 'Ser', 'UAU': 'Tyr', 'UGU': 'Cys', # UxU\n'UUC': 'Phe', 'UCC': 'Ser', 'UAC': 'Tyr', 'UGC': 'Cys', # UxC\n'UUA': 'Leu', 'UCA': 'Ser', 'UAA': '---', 'UGA': '---', # UxA\n'UUG': 'Leu', 'UCG': 'Ser', 'UAG': '---', 'UGG': 'Trp', # UxG\n# C\n'CUU': 'Leu', 'CCU': 'Pro', 'CAU': 'His', 'CGU': 'Arg', # CxU\n'CUC': 'Leu', 'CCC': 'Pro', 'CAC': 'His', 'CGC': 'Arg', # CxC\n'CUA': 'Leu', 'CCA': 'Pro', 'CAA': 'Gln', 'CGA': 'Arg', # CxA\n'CUG': 'Leu', 'CCG': 'Pro', 'CAG': 'Gln', 'CGG': 'Arg', # CxG\n# A\n'AUU': 'Ile', 'ACU': 'Thr', 'AAU': 'Asn', 'AGU': 'Ser', # AxU\n'AUC': 'Ile', 'ACC': 'Thr', 'AAC': 'Asn', 'AGC': 'Ser', # AxC\n'AUA': 'Ile', 'ACA': 'Thr', 'AAA': 'Lys', 'AGA': 'Arg', # AxA\n'AUG': 'Met', 'ACG': 'Thr', 'AAG': 'Lys', 'AGG': 'Arg', # AxG\n# G\n'GUU': 'Val', 'GCU': 'Ala', 'GAU': 'Asp', 'GGU': 'Gly', # GxU\n'GUC': 'Val', 'GCC': 'Ala', 'GAC': 'Asp', 'GGC': 'Gly', # GxC\n'GUA': 'Val', 'GCA': 'Ala', 'GAA': 'Glu', 'GGA': 'Gly', # GxA\n'GUG': 'Val', 'GCG': 'Ala', 'GAG': 'Glu', 'GGG': 'Gly' # GxG\n}
+-RNA_codon_table
+-def translate_RNA_codon(codon):
+-	return(RNA_codon_table[codon])
+-from pprint import pprint as pp
+-pp(RNA_codon_table)
+-hex(85)
+-hex(170)
+-hex(127)
+-hex(128)
+-colors = []
+-help(range)
+-from colors import rgb, hex, random
+-import colors
+-colors.random()
+-from colors import rgb, hex, random
+-from colors import rgb, hex, random
+-from colors import *
+-random()
+-colors.random()
+-import colors
+-colors.random()
+-import colors
+-colors.random()
+-colors.random_color()
+-def read_FASTA_strings(filename):
+-	with open(filename) as file:
+-		return(file.read().split('>')[1:])
+-history
+-dir()
+-def validate_base_sequence(base_sequence, RNAflag=False):
+-	valid_bases = 'UCAG' if RNAflag else 'TCAG'
+-	return all([(base in valid_bases) for base in base_sequence.upper()])
+-from random import randint
+-def random_base(RNAflag=False):
+-	return(('UCAG' if RNAflag else 'TCAG')[randint(0,3)])
+-def random_codon(RNAflag=False):
+-	return(random_base(RNAflag) + random_base(RNAflag) + random_base(RNAflag))
+-def random_codons(minlength=3, maxlength=10, RNAflag=False):
+-	return([random_codon(RNAflag) for n in range(randint(minlength, maxlength))])
+-random_codons()
+-def random_codons(minlength=3, maxlength=10, RNAflag=False):
+-	return([random_codon(RNAflag) for n in range(randint(minlength, maxlength))])
+-random_codons()
+-RNA_codon_table = {\n# Second Base\n# U C A G\n# U\n'UUU': 'Phe', 'UCU': 'Ser', 'UAU': 'Tyr', 'UGU': 'Cys', # UxU\n'UUC': 'Phe', 'UCC': 'Ser', 'UAC': 'Tyr', 'UGC': 'Cys', # UxC\n'UUA': 'Leu', 'UCA': 'Ser', 'UAA': '---', 'UGA': '---', # UxA\n'UUG': 'Leu', 'UCG': 'Ser', 'UAG': '---', 'UGG': 'Trp', # UxG\n# C\n'CUU': 'Leu', 'CCU': 'Pro', 'CAU': 'His', 'CGU': 'Arg', # CxU\n'CUC': 'Leu', 'CCC': 'Pro', 'CAC': 'His', 'CGC': 'Arg', # CxC\n'CUA': 'Leu', 'CCA': 'Pro', 'CAA': 'Gln', 'CGA': 'Arg', # CxA\n'CUG': 'Leu', 'CCG': 'Pro', 'CAG': 'Gln', 'CGG': 'Arg', # CxG\n# A\n'AUU': 'Ile', 'ACU': 'Thr', 'AAU': 'Asn', 'AGU': 'Ser', # AxU\n'AUC': 'Ile', 'ACC': 'Thr', 'AAC': 'Asn', 'AGC': 'Ser', # AxC\n'AUA': 'Ile', 'ACA': 'Thr', 'AAA': 'Lys', 'AGA': 'Arg', # AxA\n'AUG': 'Met', 'ACG': 'Thr', 'AAG': 'Lys', 'AGG': 'Arg', # AxG\n# G\n'GUU': 'Val', 'GCU': 'Ala', 'GAU': 'Asp', 'GGU': 'Gly', # GxU\n'GUC': 'Val', 'GCC': 'Ala', 'GAC': 'Asp', 'GGC': 'Gly', # GxC\n'GUA': 'Val', 'GCA': 'Ala', 'GAA': 'Glu', 'GGA': 'Gly', # GxA\n'GUG': 'Val', 'GCG': 'Ala', 'GAG': 'Glu', 'GGG': 'Gly' # GxG\n}
+-def translate_RNA_codon(codon):
+-	return(RNA_codon_table[codon])
+-def random_codons_translation(minlength=3, maxlength=10):
+-	return([translate_RNA_codon(codon) for codon in random_codons(minlength, maxlength, True)])
+-random_codons_translation()
+-def read_FASTA_entries(filename):
+-	return([seq.partition('\\n') for seq in read_FASTA_strings(filename)])
+-q.partition('\\n') for seq in read_FASTA_strings(filename)])
+-dir()
+-from pprint import pprint as pp
+-pp(dir())
+-def read_FASTA_sequences(filename):
+-	return([[seq[0][1:], seq[2].replace('\\n', '')] for seq in read_FASTA_entries(filename)])
+-def read_FASTA_sequences(filename):
+-	return([(info[1:], seq.replace('\\n', '')) for info, ignore, seq in read_FASTA_entries(filename)])
+-def read_FASTA_sequences_and_info(filename):
+-	return([[seq[0].split('|'), seq[1]] for seq in read_FASTA_sequences(filename)])
+-def read_FASTA(filename):\n	with open(filename) as file:\n	contents = file.read() # only statement inside the with\n	entries = contents.split('>')[1:] # skip blank first entry\n	partitioned_entries = [entry.partition('\\n') for entry in entries]\n	pairs = [(entry[0], entry[2]) for entry in partitioned_entries] # omit '>'\n	pairs2 = [(pair[0], pair[1].replace('\\n', '')) for pair in pairs]\n	result = [(pair[0].split('|'), pair[1]) for pair in pairs2]\n	return result
+-def read_FASTA(filename):\n	with open(filename) as file:\n		contents = file.read() # only statement inside the with\n	entries = contents.split('>')[1:] # skip blank first entry\n	partitioned_entries = [entry.partition('\\n') for entry in entries]\n	pairs = [(entry[0], entry[2]) for entry in partitioned_entries] # omit '>'\n	pairs2 = [(pair[0], pair[1].replace('\\n', '')) for pair in pairs]\n	result = [(pair[0].split('|'), pair[1]) for pair in pairs2]\n	return result
+-import os
+-os.getcwd()
+-os.chdir('~/Development/python')
+-os.chdir('/Users/mattmorrison/Development/python/BioinformaticsProgrammingUsingPython')
+-read_FASTA('data/aa001.fasta')
+-read_FASTA_sequences_and_info('data/aa001.fasta')
+-read_FASTA_sequences_and_info('data/aa010.fasta')
+-pp(read_FASTA_sequences_and_info('data/aa010.fasta'))
+-def read_FASTA_compact(filename):\n	with open(filename) as file:\n		return [(part[0].split('|'), part[2].replace('\\n', '')) for part in [entry.partition('\\n') for entry in file.read().split('>')[1:]]]
+-read_FASTA('data/aa001.fasta')
+-read_FASTA_sequences_and_info('data/aa001.fasta')
+-read_FASTA_compact('data/aa001.fasta')
+-read_FASTA_strings('data/aa001.fasta')
+-read_FASTA_entries('data/aa001.fasta')
+-read_FASTA_sequences('data/aa001.fasta')
+-def read_FASTA_sequences(filename):\n    return([(info, seq.replace('\\n', '')) for info, ignore, seq in read_FASTA_entries(filename)])
+-read_FASTA_sequences('data/aa001.fasta')
+-def aa_generator(rnaseq):
+-	return((translate_RNA_codon(rnaseq[n:n+3]) for n in range(0, len(rnaseq), 3)))
+-help(return)
+-help(return())
+-quit()
+-import os
+-os.getcwd()
+-from fasta import *
+-RNA_codon_table = {\n# Second Base\n# U C A G\n# U\n'UUU': 'Phe', 'UCU': 'Ser', 'UAU': 'Tyr', 'UGU': 'Cys', # UxU\n'UUC': 'Phe', 'UCC': 'Ser', 'UAC': 'Tyr', 'UGC': 'Cys', # UxC\n'UUA': 'Leu', 'UCA': 'Ser', 'UAA': '---', 'UGA': '---', # UxA\n'UUG': 'Leu', 'UCG': 'Ser', 'UAG': '---', 'UGG': 'Trp', # UxG\n# C\n'CUU': 'Leu', 'CCU': 'Pro', 'CAU': 'His', 'CGU': 'Arg', # CxU\n'CUC': 'Leu', 'CCC': 'Pro', 'CAC': 'His', 'CGC': 'Arg', # CxC\n'CUA': 'Leu', 'CCA': 'Pro', 'CAA': 'Gln', 'CGA': 'Arg', # CxA\n'CUG': 'Leu', 'CCG': 'Pro', 'CAG': 'Gln', 'CGG': 'Arg', # CxG\n# A\n'AUU': 'Ile', 'ACU': 'Thr', 'AAU': 'Asn', 'AGU': 'Ser', # AxU\n'AUC': 'Ile', 'ACC': 'Thr', 'AAC': 'Asn', 'AGC': 'Ser', # AxC\n'AUA': 'Ile', 'ACA': 'Thr', 'AAA': 'Lys', 'AGA': 'Arg', # AxA\n'AUG': 'Met', 'ACG': 'Thr', 'AAG': 'Lys', 'AGG': 'Arg', # AxG\n# G\n'GUU': 'Val', 'GCU': 'Ala', 'GAU': 'Asp', 'GGU': 'Gly', # GxU\n'GUC': 'Val', 'GCC': 'Ala', 'GAC': 'Asp', 'GGC': 'Gly', # GxC\n'GUA': 'Val', 'GCA': 'Ala', 'GAA': 'Glu', 'GGA': 'Gly', # GxA\n'GUG': 'Val', 'GCG': 'Ala', 'GAG': 'Glu', 'GGG': 'Gly' # GxG\n}
+-def translate_RNA_codon(codon):
+-	return RNA_codon_table[codon]
+-aagen = aa_generator('CCCTAAAGCCCTAAAATGGTAGCTCCGATAGCTACGATCGCGCATAATCGAGTATCGACGCATATCGCGCTTAGCGCTACGCT')
+-next()
+-dir()
+-dir(__builtins__)
+-from pprint import pprint as pp
+-pp(dir(__builtins__))
+-ascii()
+-ascii('kdfiog549ynh')
+-dir()
+-from pprint import pprint as pp
+-def get_FASTA_descriptions(filename):
+-	with open(filename) as file:
+-		return [line[1:].split('|') for line in file if line[0] == '>']
+-def translate_RNA_codon(codon):
+-	return RNA_codon_table[codon]
+-thingy = ['aa', 'bb', 'cc']
+-thingy
+-str(thingy)
+-thingy[1]
+-string = thingy[1] + thingy[2] + thingy[3]
+-string = thingy[0] + thingy[1] + thingy[2]
+-string
+-def generate_triples(chars='CTAG'):
+-	chars = set(chars)
+-	return [b1 + b2 + b3 for b1 in chars for b2 in chars for b3 in chars]
+-generate_triples()
+-len(generate_triples())
+-generate_triples(chars=thingy)
+-generate_triples(chars=['00', '7F', 'FF'])
+-colors = generate_triples(chars=['00', '7F', 'FF'])
+-colors
+-pp colors
+-pp(colors)
+-amino_acids = 'ACDEFGHIKLMNPQRSTVWY'
+-len(amino_acids)
+-generate_triples(amino_acids)
+-len(generate_triples(amino_acids))
+-def generate_pentamers(sequence):
+-	sequence = set(sequence)
+-	return [s1+s2+s3+s4+s5 for s1 in sequence for s2 in sequence for s3 in sequence for s4 in sequence for s5 in sequence ]
+-3 ** 20
+-20**3
+-20**5
+-20**10
+-len(generate_pentamers(amino_acids))
+-len
+-generate_pentamers
+-lambda x: x
+-[1,2,3,]
+-generate_pentamers()
+-dir
+-help
+-help
+-?
+-wtf
+-quit
+-puts "Hello"
+-puts "Hello Ruby!"
+-1 + 1
+-1 + 1
+-"There are #{24*60*60} seconds in a day"
+-string = <<END_OF_STRING
+-I am a captain of the sea!
+-Dum dum da da dum dum tum dum!
+-END_OF_STRING
+-"This is a string".split
+-"This is a string".split()
+-c = "This is a string"
+-c
+-d
+-c.split
+-c = "This is a string"
+-c.split
+-`
+-c
+-puts
+-"This is stuff"
+-q
+-import this
+-plot(1)
+-show(block=True)
+-%pylab
+-show()
+-plot(1)
+-show()
+-show(block=True)
+-import os
+-os.getcwd
+-os.getcwd()
+-os.chdir('/Users/mattmorrison/Development/python/PyForDataAnalysis/')
+-path = 'ch02/usagov_bitly_data2012-03-16-1331923249.txt'
+-import json
+-records = [json.loads(line) for line in open(path)]
+-records[100]
+-records
+-oops
+-oops()
+-path = 'ch02/usagov_bitly_data2012-03-16-1331923249.txt'
+-path = 'PyForDataAnalysis/ch02/usagov_bitly_data2012-03-16-1331923249.txt'
+-import json
+-records = [json.loads(line) for line in open(path)]
+-plot.ion()
+-%pylab
+-records(1)
+-records[1]
+-from pandas import DataFrame, Series
+-import pandas as pd
+-frame = DataFrame(records)
+-frame
+-tz_counts = frame['tz'].value_counts()
+-tz_counts[:10]
+-clean_tz = frame['tz'].fillna('Missing')
+-clean_tz[clean_tz == ''] = 'Unknown'
+-tz_counts = clean_tz.value_counts()
+-tz_counts.plot(kind='barh', rot=0)
+-show(block=True)
+-tz_counts[:10].plot(kind='barh', rot=0)
+-show(block=True)
+-tz_counts[:10].plot(kind='barh', rot=0)
+-show()
+-show(block=True)
+-import matplotlib
+-matplotlib.use("Qt4Agg")
+-import matplotlib.pylab as plt
+-plt.ion()
+-plt.plot(2)
+-import matplotlib
+-results = Series([x.split()[0] for x in frame.a.dropna()])
+-results
+-plot(2)
+-show()
+-show(block=True)
+-plot(2)
+-dir()
+-dir(__name__)
+-dir(__builtins__)
+-system
+-sys
+-dir(sys)
+-import sys
+-dir(sys)
+-sys.version
+-quit()
+-dir()
+-numpy
+-plot(1)
+-plot(1)
+-?
+-?
+-read_table
+-import pandas as pd
+-dir(pd)
+-unames = ['user_id', 'gender', 'age', 'occupation', 'zip']
+-import os
+-os.chdir('PyForDataAnalysis/ch02/movielens')
+-os.getpwd()
+-os.getcwd()
+-unames = ['user_id', 'gender', 'age', 'occupation', 'zip']
+-import pandas as pd
+-users = pd.read_table('users.dat', sep='::', header=None, names=unames)
+-import os
+-os.chdir('PyForDataAnalysis/ch02/movielens')
+-users = pd.read_table('users.dat', sep='::', header=None, names=unames)
+-rnames = ['user_id', 'movie_id', 'rating', 'timestamp']
+-ratings = pd.read_table('ratings.dat', sep='::', header=None, names=rnames)
+-mnames = ['movie_id', 'title', 'genres']
+-movies = pd.read_table('ml-1m/movies.dat', sep='::', header=None, names=mnames)
+-movies = pd.read_table('movies.dat', sep='::', header=None, names=mnames)
+-users[:20]
+-ratings[:20]
+-movies[:20]
+-movies[:5]
+-import os
+-os.chdir('PyForDataAnalysis/ch02/movielens')
+-import pandas as pd
+-unames = ['user_id', 'gender', 'age', 'occupation', 'zip']
+-rnames = ['user_id', 'movie_id', 'rating', 'timestamp']
+-mnames = ['movie_id', 'title', 'genres']
+-users = pd.read_table('users.dat', sep='::', header=None, names=unames)
+-ratings = pd.read_table('ratings.dat', sep='::', header=None, names=rnames)
+-movies = pd.read_table('movies.dat', sep='::', header=None, names=mnames)
+-ratings
+-data = pd.merge(pd.merge(ratings, users), movies)
+-data
+-data.ix[0]
+-mean_ratings = data.pivot_table('rating', rows='title', cols='gender', aggfunc='mean')
+-mean_ratings[:20]
+-ratings_by_title = data.groupby('title').size()
+-active_titles = ratings_by_title.index[ratings_by_title >= 250]
+-active_titles
+-big_mean_ratings = mean_ratings.ix[active_titles]
+-'
+-)
+-)]
+-big_mean_ratings
+-top_female_ratings = big_mean_ratings.sort_index(by='F', ascending=False)
+-top_female_ratings[:25]
+-top_female_ratings[:10]
+-big_mean_ratings['diff'] = big_mean_ratings['M'] - big_mean_ratings['F']
+-sorted_by_diff = big_mean_ratings.sort_index(by='diff')
+-sorted_by_diff
+-sorted_by_diff[:10]
+-sorted_by_diff[::-1]
+-sorted_by_diff[:10:-1]
+-sorted_by_diff[:-10]
+-sorted_by_diff[-1:-10]
+-sorted_by_diff[-10:-1]
+-sorted_by_diff[-10:]
+-sorted_by_diff[::-1][:15]
+-sorted_by_diff[:15]
+-sorted_by_diff['diff' == 0]
+-rating_stdev_by_title = data.groupby('title')['rating'].std().ix[active_titles]
+-rating_stdev_by_title.order()
+-rating_stdev_by_title.order(ascending=False)
+-os.getcwd()
+-os.chdir('../../names')
+-!head yob1880.txt
+-names1880 = pd.read_csv('yob1880.txt', names=['name', 'sex', 'births'])
+-names1880.groupby('sex').births.sum()
+-years = range(1880, 2011)
+-pieces = []
+-columns = ['name', 'sex', 'birth']
+-for year in years:
+-	path = 'yob%d.txt' % year\n		frame = pd.read_csv(path, names=columns)
+-	frame['year'] = year
+-for year in years:
+-	path = 'yob%d.txt' % year frame = pd.read_csv(path, names=columns)
+-	path = 'yob%d.txt' % year
+-for year in years:
+-	path = 'yob%d.txt' % year
+-	frame = pd.read_csv(path, names=columns)
+-	frame['year'] = year
+-	pieces.append(frame)
+-for year in years:
+-	path = 'yob%d.txt' % year
+-	frame = pd.read_csv(path, names=columns)
+-	frame['year'] = year
+-	pieces.append(frame)
+-	names = pd.concat(pieces, ignore_index=True)
+-names
+-names[-1]
+-names[-1:]
+-new_frame = pd.read_csv('yob2011.txt', names=columns)
+-new_frame['year'] = 2011
+-pieces.append(new_frame)
+-names = pd.concat(pieces, ignore_index=True)
+-names
+-names[-1:]
+-total_births = names.pivot_table('births', rows='year', cols='sex', aggfunc=sum)
+-"""
+-''
+-"""
+-total_births = names.pivot_table('birth', rows='year', cols='sex', aggfunc=sum)
+-print(\\""")
+-print(""")
+-\\z
+-"""
+-!
+-"""
+-!
+-\\!
+-"""
+-chr('"')
+-ord('"')
+-hex(34)
+-print('\\u22\\u22\\u22')
+-print('\\u0022\\u0022\\u0022')
+-total_births
+-total_births.plot(title='Total births by sex and year')
+-def add_prop(group):
+-	births = group.births.astype(float)
+-	group['prop'] = births / births.sum
+-	return group
+-names = names.groupby(['year', 'sex']).apply(add_prop)
+-print('\\u0022\\u0022\\u0022')
+-def add_prop(group):
+-	births = group.birth.astype(float)
+-	group['prop'] = births / births.sum
+-	return group
+-names = names.groupby(['year', 'sex']).apply(add_prop)
+-print('\\u0022\\u0022\\u0022')
+-def add_prop(group):
+-	births = group.birth.astype(float)
+-	group['prop'] = births / births.sum()
+-	return group
+-names = names.groupby(['year', 'sex']).apply(add_prop)
+-names
+-np
+-np.allclose(names.groupby(['year', 'sex']).prop.sum(), 1)
+-def get_top1000(group):
+-	return group.sort_index(by='births', ascending=False)[:1000]
+-grouped = names.groupby(['year', 'sex'])
+-top1000 = grouped.apply(get_top1000)
+-print('\\u0022\\u0022\\u0022')
+-def get_top1000(group):
+-	return group.sort_index(by='birth', ascending=False)[:1000]
+-top1000 = grouped.apply(get_top1000)
+-top1000[:20]
+-group
+-boys = top1000[top1000.sex == 'M']
+-girls = top1000[top1000.sex == "F"]
+-total_births = top1000.pivot_table('birth', rows='year', cols='name', aggfunc=sum)
+-total_births
+-total_births[20:]
+-total_births[19:]
+-total_births[15:]
+-total_births[10:]
+-total_births[:20]
+-total_births[:15]
+-total_births[:10]
+-total_births['Matthew']
+-total_births['Matthew'].plot()
+-total_births[['Matthew', 'John', 'Daniel', 'Douglas', 'Richard', 'Janet', 'Amy']].plot()
+-total_births[[range(1990,2012)]]
+-total_births[range(1990,2012)]
+-import PIL
+-table = top1000.pivot_table('prop', rows='year', cols='sex', aggfunc=sum)
+-table.plot()
+-def get_quantile_count(group, q=0.5):
+-	group = group.sort_index(by='prop', ascending=False)
+-	return group.prop.cumsum().searchsorted(q) + 1
+-diversity = top1000.groupby(['year', 'sex']).apply(get_quantile_count)
+-diversity = diversity.unstack('sex')
+-diversity.plot()
+-names
+-def myfunc():
+-	pass
+-def myfunc():
+-	pass
+-%paste
+-%cpaste
+-%timeit
+-?timeit
+-%quickref
+-ls
+-cd??
+-plot(randn(1000).cumsum())
+-prompt?
+-plot(randn(1000).cumsum())
+-"This is a stRing".casefold()
+-'THIS IS A STRING'.casefold()
+-'THIS IS A STRING'.toupper()
+-'THIS IS A STRING'.upper()
+-"This is a stRing".upper()
+-"This is a stRing".title()
+-mystring = 'this is a string'
+-mystring = 'This iS a StRIng'
+-mystring = 'this is a string'
+-mystring.casefold()
+-def myfunc(option=value):
+-    self.option = option
+-    return self
+-def myfunc(option=True):
+-    self.option = option
+-    return self
+-pwd
+-pwd??
+-a = 1
+-while True:
+-    print(a)
+-    a += 1
+-foo = 'bar'
+-foo
+-_2
+-_i2
+-_dh
+-env
+-True
+-q
+-!python
+-exit()
+-hello
+-'this is some stuff
+-'this is some stuff'
+-cwd
+-pwd
+-ls
+-cd PyForDataAnalysis/
+-run ch03/ch03/ipython_bug.py
+-run ch03/ipython_bug.py
+-debug
+-u
+-q
+-debug
+-a
+-b
+-print(a)
+-pwd
+-cd PyForDataAnalysis/ch03
+-cat ipython_bug.py
+-strings = ['foo', 'foobar', 'baz', 'qux', 'python', 'Guido van Rossum'] * 100000
+-time method1 = [x for x in strings if x.startswith('foo')]
+-time method2 = [x for x in strings if x[:3] == 'foo']
+-time method1 = [x for x in strings if x.startswith('foo')]
+-time method2 = [x for x in strings if x[:3] == 'foo']
+-timeit method1 = [x for x in strings if x.startswith('foo')]
+-timeit [x for x in strings if x.startswith('foo')]
+-x = 'foobar'
+-y = 'foo'
+-timeit x.startswith(y)
+-timeit x[:3] == y
+-import numpy as np
+-from numpy.linalg import eigvals
+-run run_experiment.py
+-timeit run run_experiment.py
+-timeit run_experiment.py
+-timeit run_experiment
+-data
+-data = array([[0.9526, -0.246 , -0.8856], [ 0.5639, 0.2379, 0.9104]])
+-data
+-data * 10
+-data * data
+-data.shape
+-data.dtype
+-empty((2,3,2))
+-empty_like((2,3,2))
+-empty_like??
+-arange(50)
+-datetime.date.fromordinal(datetime.date.today().toordinal()-1)
+-import datetime
+-datetime.date.fromordinal(datetime.date.today().toordinal()-1)
+-print(datetime.date.fromordinal(datetime.date.today().toordinal()-1))
+-pylab
+-quit()
+-plot(1)
+-quit()
+-dir()
+-dir(__builtin__)
+-get_ipython
+-get_ipython()
+-dir(__builtins__)
+-exit()
+-x = u'\\u041c\\u0438\\u0440'.encode('utf-8')
+-x
+-xx = '\\u041c\\u0438\\u0440'.encode('utf-8')
+-xx
+-x == xx
+-str(x)
+-print(x)
+-import ctypes
+-ctypes.c_bool()
+-$m = 42
+-print $m
+-print
+-print
+-print "Hello REPL"
+-pwd
+-x = open('sample.txt').read().decode('utf-8')
+-x = open('sample2.txt').read().decode('utf-8')
+-x = open('sample2.txt').read()
+-x
+-x.close()
+-np
+-pylab
+-np
+-pwd
+-ls
+-?xdel
+-np.empty((2,3,2))
+-pylab
+-np.empty((2,3,2))
+-pylab
+-arr = np.arange(10)
+-arr
+-arr[5]
+-arr[5:8] = 1000000
+-arr
+-arr2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+-arr2d
+-arr2d[2]
+-arr2d[2][1]
+-arr3d = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+-arr3d[2,1]
+-arr3d[1,2]
+-arr3d[1,1]
+-arr3d
+-names = np.array(['Bob', 'Joe', 'Will', 'Bob', 'Will', 'Joe', 'Joe'])
+-data = randn(7,4)
+-data
+-names
+-names == 'Joe'
+-data[data < 0] = None
+-data
+-myarr = np.empty((8, 4))
+-myarr
+-for i in range(8):
+-	myarr[i] = 1/(i -2j)
+-myarr
+-for i in range(8):
+-	myarr[i] = 1/i
+-myarr = np.empty((8, 4))
+-myarr
+-newarr = np.arange(32)
+-newarr
+-newarr.reshape(8,4)
+-newarr.T
+-newarr
+-pylab
+-dir()
+-dir(np)
+-dir(plt)
+-dir(mpl)
+-points = np.arange(-5, 5, 0.01)
+-xs, ys = np.meshgrid(points, points)
+-xs
+-z = np.sqrt(sin(xs ** 2) + cos(ys ** 2))
+-z = np.sqrt(abs(sin(xs ** 2) + cos(ys ** 2)))
+-plt.imshow(z, cmap=plt.cm.gray); plt.colorbar()
+-from jinja2 import Template
+-data_ar = array('B')
+-data_ar.fromstring(b64dec)
+-plt.imshow(z, cmap=plt.cm.gray); plt.colorbar()
+-z = np.exp(abs(sin(xs ** 2) + cos(ys ** 2)))
+-plt.imshow(z, cmap=plt.cm.gray); plt.colorbar()
+-z = np.exp((sin(xs ** 2) + cos(ys ** 2)))
+-plt.imshow(z, cmap=plt.cm.gray); plt.colorbar()
+-z = np.exp(abs(sin(xs ** .5) + cos(ys ** 2)))
+-plt.imshow(z, cmap=plt.cm.gray); plt.colorbar()
+-z = np.sqrt(abs(sin(xs ** .5) + cos(ys ** 2)))
+-plt.imshow(z, cmap=plt.cm.gray); plt.colorbar()
+-z = np.sqrt((sin(xs ** .5) + cos(ys ** 2)))
+-plt.imshow(z, cmap=plt.cm.gray); plt.colorbar()
+-plt.imshow(z, cmap=plt.cm.gray)
+-z = np.exp(abs(sin(xs ** 2) + cos(ys ** 2)))
+-plt.imshow(z, cmap=plt.cm.gray)
+-plt.imshow(z, cmap=plt.cm.colors)
+-ord('"')
+-chr(34)
+-print(chr(34)*3)
+-plt.colormaps
+-plt.colormaps()
+-plt.imshow(z, cmap=plt.cm.rainbow)
+-pylab
+-numbers = [0,1,2,3,4,5]
+-for i in numbers:
+-	v = numbers
+-for i in numbers:
+-	v = numbers
+-	print(v)
+-for i in numbers:
+-	print(i)
+-pylab
+-m = np.random.normal(0, 1, size=(1000, 2))
+-m[:,0].shape
+-m
+-m[:,1].shape
+-m[1:,0].shape
+-m.shape
+-m[:,0]
+-a = array([1.0,2.0,3.0])
+-a*2
+-m[:,0:]
+-m[:,:0]
+-m[:,:1]
+-m[:,:1].shape
+-m[,:1].shape
+-m[:,:1].shape
+-m = np.random.normal(0, 1, size=(1000, 2))
+-q = np.zeros(shape=(1000,1))
+-print(m[:,0] -q)
+-print(m[:,:1] -q)
+-dir(np)
+-%pylab
+-np.apply_along_axis
+-%pylab
+-alert "Hiya"
+-console.log "What up?"
+-quit
+-bye
+-exit
+-quit()
+-console.quit
+-console
+-my_list = [0,1,2,3,4,5,6,7,8,9]\n[print(i) for i in mylist]
+-my_list = [0,1,2,3,4,5,6,7,8,9]\n[print(i) for i in my_list]
+-my_list = [0,1,2,3,4,5,6,7,8,9]\nprint(i) for i in my_list
+-x = [1,2,3]
+-y = [4,5,6]
+-zip(x,y)
+-print(zip(x,y))
+-dict(zip)
+-zipped = zip(x,y)
+-dict(zipped)
+-set(zipped)
+-tuple(zipped)
+-list(zipped)
+-zipped
+-zipped = zip(x,y)
+-list(zipped)
+-float(input(Give me a number! ))
+-float(input("Give me a number! "))
+-23
+-x = raw_input("fubar!")
+-import PIL
+-Image()
+-from PIL import Image
+-Image
+-PIL.Image
+-my_string = "This is some text"
+-my_string[-1:]
+-my_string[::-1]
+-for i in my_string:
+-	print(i)
+-quit()
+-local_dir = dir()
+-local_dir
+-dir()
+-pprint
+-dir | wc -l
+-wc
+-z=138\ny=2\n\nwhile z!=1:\n    t=0\n\n    for j in range(1,z):\n        if z%j==0:\n            t=t+j\n    z=t\n    y=y+1\nprint(y)
+-plot(1)
+-np.test()
+-help(np.test)
+-import scipy
+-help(scipy.test)
+-np.test(coverage=True)
+-import math
+-math.sqrt(125)
+-math.sqrt(400)
+-20 == 20.0
+-20 == 20.00000000000000001
+-20 == 20.000000001
+-20 == 20.00000000001
+-20 == 20.0000000000001
+-20 == 20.000000000000001
+-20 == 20.00000000000001
+-import sys
+-sys.maxsize
+-dir(sys)
+-sys.float_info
+-sys.float_info.epsilon
+-us = u'MyString'
+-us.encode('utf-8')
+-us.encode('utf-8') == 'MyString'
+-us.decode('utf-8') == 'MyString'
+-dir(pandas)
+-import pandas
+-dir(pandas)
+-pprint
+-dir(pandas)
+-help(pandas.read_csv)
+-import pandas
+-help(pandas.read_csv)
+-pandas.__version__
+-matplotlib.__version__
+-matplotlib.__version__numpy__
+-np.__version__
+-np.show_config()
+-np.bench
+-np.bench()
+-np.bench?
+-np.bench(label='full')
+-np.bench(label='full')
+-False
+-import scipy
+-scipy.rec
+-help(np.recfromcsv)
+-bork = "Rød grød med fløde.... !! :)"
+-import re
+-pattern = re.compile(r"\\W+")
+-words = pattern.split(bork.lower())
+-words
+-re.UNICODE
+-re.UNICODE?
+-re.UNICODE??
+-def foo(a, b=[])
+-def foo(a, b=[]):
+-	b.append(a)
+-	return b
+-foo(3)
+-foo(42)
+-print("what up?")
+-y = []
+-y.append(a)
+-y.append(1)
+-y.append(2)
+-y
+-z = y.append(3)
+-y
+-z
+-z == None
+-dir()
+-a = "a string"\nb = "another string"\nc = " ".join(a,b)
+-b.join(a)
+-a
+-b
+-b.join(a)
+-a = "stuff"
+-b = "things"
+-b.join(a)
+-" ".join(a)
+-c
+-"am I running?"
+-try:
+-	return true
+-finally:
+-def weird():
+-	try:
+-		return True
+-	finally:
+-		return False
+-weird()
+-try:
+-	return True
+-finally:
+-	return False
+-def strange():
+-	try:
+-		return True
+-	finally:
+-		return False
+-strange()
+-return true;
+-false\n;
+-exit
+-raise SyntaxError
+-weird
+-weird()
+-del weird
+-weird()
+-help(del)
+-help del
+-help
+-help()
+-del
+-quit
+-help('del')
+-help('del')
+-clear
+-import os.
+-import os
+-pwd
+-os.listdir()
+-!mkdir c:\\temp\\
+-os.chdir('c:/temp')
+-os.listdir()
+-!touch test.txt
+-os.listdir()
+-!touch test.TXT
+-os.listdir()
+-!touch TesT2.TXT
+-os.listdir()
+-myfile = 'test.txt'
+-[f == myfile for f in os.listdir()]
+-for f in os.listdir():
+-	if f == myfile:
+-		print('Found!')
+-	else:
+-		print('Not found...')
+-		print('Found!')
+-os.remove('test.txt')
+-!touch TEST.TXT
+-os.listdir()
+-for f in os.listdir():
+-	if f == myfile:
+-		print('Found!')
+-		return
+-def findfile():
+-	for f in os.listdir():
+-return

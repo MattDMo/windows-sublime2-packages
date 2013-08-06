@@ -1,0 +1,48 @@
+[
+     {
+        "id": "tools",
+        "children":
+        [{
+            "caption": "SublimeREPL",
+            "mnemonic": "r",
+            "id": "SublimeREPL",
+            "children":
+            [
+                {"caption": "Python",
+                "id": "Python",
+
+                 "children":[
+                    {"command": "repl_open",
+                     "caption": "Python 3",
+                     "id": "repl_python3",
+                     "mnemonic": "p",
+                     "args": {
+                        "type": "subprocess",
+                        "encoding": "utf8",
+                        "cmd": ["/opt/local/bin/python3", "-i", "-u"],
+                        "cwd": "/Users/mattmorrison/Development/python",
+                        "syntax": "Packages/Python/Python.tmLanguage",
+                        "external_id": "python3",
+                        "extend_env": {"PYTHONIOENCODING": "utf-8"}
+                        }
+                    },
+                    {"command": "repl_open",
+                     "caption": "IPython 3",
+                     "id": "repl_ipython3",
+                     "mnemonic": "p",
+                     "args": {
+                        "type": "subprocess",
+                        "encoding": "utf8",
+                        "cmd": ["/opt/local/bin/ipython", "-i", "--pylab=osx", "--colors=NoColor"],
+                        "cwd": "/Users/mattmorrison/Development/python",
+                        "syntax": "Packages/Python/Python.tmLanguage",
+                        "external_id": "Ipython",
+                        "extend_env": {"PYTHONIOENCODING": "utf-8"}
+                        }
+                    }
+                ]
+                }
+            ]
+            }]
+        }
+]

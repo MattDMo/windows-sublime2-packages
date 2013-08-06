@@ -1,0 +1,33 @@
+[
+     {
+        "id": "tools",
+        "children":
+        [{
+            "caption": "SublimeREPL",
+            "mnemonic": "r",
+            "id": "SublimeREPL",
+            "children":
+            [
+                {"caption": "Perl",
+                "id": "Perl",
+
+                 "children":[
+                    {"command": "repl_open",
+                     "caption": "Devel::REPL",
+                     "id": "repl_perl",
+                     "mnemonic": "p",
+                     "args": {
+                        "type": "subprocess",
+                        "encoding": "utf8",
+                        "cmd": ["c:/perl/bin/perl.exe", "c:/perl/site/bin/re.pl"],
+                        "cwd": "$file_path",
+                        "syntax": "Packages/Perl/Perl.tmLanguage",
+                        "external_id": "devel_repl"
+                        }
+                    }
+                    ]
+                }
+            ]
+            }]
+        }
+]

@@ -1,0 +1,71 @@
+=== Description ===
+A plugin that provides a Java code completion view inside of Sublime Text 2. It also provides import insertion/completion and goto source/javadocs.
+
+=== Known issues and feature requests ===
+Please go [[https://github.com/quarnster/SublimeJava/issues?sort=created&direction=desc&state=open|here]] to see the currently known issues and feature request, or to file a new.
+
+=== Prerequisites ===
+  # You need to have java installed on your system and the java binary in your path
+
+=== Installation ===
+    * The easiest way to install SublimeJava is via the excellent Package Control Plugin
+    ** See http://wbond.net/sublime_packages/package_control#Installation
+    *** Once package control has been installed, bring up the command palette (cmd+shift+P or ctrl+shift+P)
+    *** Type Install and select "Package Control: Install Package"
+    *** Select SublimeJava from the list. Package Control will keep it automatically updated for you
+    * If you want to manually install it using git instead:
+    ** Go to your packages directory and type:
+    ***        git clone --recursive https://github.com/quarnster/SublimeJava SublimeJava
+    ** To update to the latest commit, use this command in the SublimeJava directory:
+    ***        git pull && git submodule foreach --recursive git pull origin master
+    ** Once you have the sources pulled, you'll need to compile the SublimeJava java source file:
+    ***        javac SublimeJava.java
+    * You most likely want to configure the "sublimejava_classpath" setting to your own, issue [[https://github.com/quarnster/SublimeJava/issues/23|23]] details how this is done.
+    * Also, you would mostly likely want to configure the "sublimejava_srcpath" and "sublimejava_docpath"
+    to use source and doc search. NOTE: At present, this does not handle jar files.
+
+==== Optional Key Bindings ====
+You might want to add some keybindings to your user key bindings like the following:
+
+{{{
+    {"keys": ["ctrl+j", "d"], "command": "open_java_doc", "args": {"under_cursor": true }},
+    {"keys": ["ctrl+j", "s"], "command": "open_java_source", "args": {"under_cursor": true }},
+    {"keys": ["ctrl+j", "i"], "command": "import_java_class"},
+}}}
+
+=== Usage ===
+Once installed it'll try to provide reasonable completion suggestions when you trigger autocompletion. Please note that it accomplishes this with the use of [[http://docs.oracle.com/javase/tutorial/reflect/index.html|reflection]] so it can only complete compiled classes that are in your classpath.
+
+To import a class, type the class name wherever it is that you will be using it. Then, with the cursor on class name,
+run the "Java: Import Class Under Cursor" command.  If the class is found in the classpath, the possible imports will
+be presented to you in a quicklist. You can then choose the correct match for your import, and it will be inserted
+after the final import statement, or, if no imports are found, after the package declaration.  If none of the presented
+classes are the class that you wanted to import, check your "sublime_classpath" setting.
+
+To go to source or javadocs, you may either look for the source under the cursor (using the "Java: Open Source/Javadoc Under Cursor" command, or simply open up a quicklist and filter through all sources ("Java: Open Source/Javadoc" command).
+
+=== License ===
+This plugin is using the zlib license
+
+{{{
+Copyright (c) 2012 Fredrik Ehnbom
+
+This software is provided 'as-is', without any express or implied
+warranty. In no event will the authors be held liable for any damages
+arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+   1. The origin of this software must not be misrepresented; you must not
+   claim that you wrote the original software. If you use this software
+   in a product, an acknowledgment in the product documentation would be
+   appreciated but is not required.
+
+   2. Altered source versions must be plainly marked as such, and must not be
+   misrepresented as being the original software.
+
+   3. This notice may not be removed or altered from any source
+   distribution.
+}}}
